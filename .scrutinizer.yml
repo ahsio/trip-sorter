@@ -1,0 +1,13 @@
+filter:
+    paths:
+        - "src/*"
+
+build:
+    tests:
+        override:
+            -
+                command: 'vendor/bin/phpspec run -c phpspec.coverage.yml -f progress'
+                on_node: 1
+                coverage:
+                    file: 'coverage.xml'
+                    format: 'clover'
